@@ -1,1 +1,5 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The vulnerability is due to the session's cookies such that in insecure.js the server allows programmatically accessed cookies, which allows a malicious user to use a automatically submitted html form to take the session id and create a post method to the sensitive URI.
+The secure version prevents this vulnerability due to the httpOnly flag in the cookies of the session middleware that only allows the session id to be accessed from HTTP requests, and only allows access from the same site between the same host name.
+ 
