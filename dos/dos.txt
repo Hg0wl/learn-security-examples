@@ -1,2 +1,6 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+    The vulnerability in the insecure server is the fact that the mongodb query uses user input directly in the query to the _id field and any non-string characters in the query causes an error that crashes the server.
+    The secure version of the server addresses this vulnerability by adding error handling such that the error caused by the non-string query to a mongodb database can be handled without crashing the server.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+    Sanitizing the user input is still an important method to preventing threats, even though mongodb has built in security.
+    Also implementing a rate-handling middleware can prevent any attacks that try to overwhelm the server with a very large number of requests in a short span of time
