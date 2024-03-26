@@ -1,2 +1,6 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
+    The vulnerability in the insecure version is that fact that any user can input any 'name' into the form and there are no ways to track who created which message. However, in the secure verison, every method request, message creation, and error is logged into a private log file that will keep track of each user that uses the server, and ties a user to each message created.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+    Instead of storing the server log on the file system, it could be cached in the file system, then stored in a database like mongodb can help keep the server log in the event the server goes down for any reason. 
+    Make sure to sanitize any user inputs that are logged so as to not perform attacker controlled code in the logs
+    Introduce audit scripts to monitor any patterns in the logs that can be flagged for further investigation or action. 
