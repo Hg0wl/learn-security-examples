@@ -1,0 +1,4 @@
+The insecure version of the server is vulnerable to privilege escalation because there is no user authentification so any user could change the role of any other user. 
+The secure version prevents the vulnerability due to the usage of sessions to authenticate that only authorized users have access to secure data or methods. 
+
+Additional security measures could improve upon the session authentification by also sending a token to the client and requiring the token to make any changes as that user as a means to implement two factor authentification. 
