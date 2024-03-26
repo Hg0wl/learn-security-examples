@@ -1,3 +1,9 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
-Which CIA property does tampering violate?
+    The vulnerability is due to the server taking and using user input as code that allows for malicious users to insert queries rather than just usernames as expected by the method.
+
+Which CIA property does information disclosure violate?
+    Information disclosure violates the confidentiality property of CIA becuase it allows for users without access to data to access secure data that could be harmful.
+
 What additional security mechanisms can you incorporate?
+    Some additional security mechanisms that could be incorporated to prevent further information disclosure vulnerabilities could include user verification to make sure only the correct users 
+    have access to confidential information, removing console.log commands or other methods that log secure information that can be found, and implementing hashing or encryption when storing or sending secure information. 
